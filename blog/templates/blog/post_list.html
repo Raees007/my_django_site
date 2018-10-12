@@ -8,7 +8,7 @@
                 <p><strong>Published: </strong>{{ post.published_date }}</p>
             </div>
 
-            <p><h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2> by {{ post.author }}</p>
+            <p><h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2> <strong><i style="font-size:12px;color:#666;margin:0 0 10px"> by {{ post.author }}</i></strong></p>
             <p>{{ post.text|linebreaksbr }}</p><br><br><br>
         </div>
     {% endfor %}
