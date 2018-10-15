@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Blog</title>
+    <title>{% block title %} {% endblock %}</title>
    <link rel="apple-touch-icon" sizes="57x57" href=".png">
 
     <link href="https://fonts.googleapis.com/css?Tangrine:bold,bolditalic|Inconsolata:italic|Droid+Sans" rel="stylesheet">
@@ -18,6 +18,11 @@
     {% if user.is_authenticated %}
         <a href="{% url 'post_draft_list' %}" class="top-menu"><i class="fab fa-firstdraft fa-2x"></i></a>
         <a href="{% url 'post_new' %}" class="top-menu"><i class="fas fa-plus fa-2x"></i></a>
+
+        <p class="top-menu">Hello {{ user.username }} <small><a href="{% url 'logout' %}">Logout</a></small> </p>
+
+    {% else %}
+        <a href="{% url 'login' %}" class="top-menu"><i class="fas fa-sign-in-alt fa-2x"></i></a>
     {% endif %}
 
     <h1><a href="/">Raees Blog</a></h1>

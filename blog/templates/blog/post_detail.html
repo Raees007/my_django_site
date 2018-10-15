@@ -1,6 +1,9 @@
 {% extends 'blog/base.html' %}
 
+{% block title %} {{ post.title }} {% endblock %}
+
 {% block content %}
+<div class="loader"></div>
     <div class="post">
         {% if post.published_date %}
             <div class="date">
@@ -19,4 +22,5 @@
         <p><h2>{{ post.title }}</h2>  <strong><i style="font-size:12px;color:#666;margin:0 0 10px"> by {{ post.author }}</i></strong></p>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
+
 {% endblock %}
