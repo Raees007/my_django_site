@@ -28,7 +28,7 @@ urlpatterns = [
     # myapp.com/post/2/publish --> online
     path('post/<int:pk>/publish/', views.post_publish, name='post_publish'),
 
-    # 127.0.0.8000/accounts/login/ --> Local
-    # myapp.com/accounts/login/ --> online
-    # path('accounts/login/', auth_views.login, name='login'),
+    # 127.0.0.8000/post/2/comment/ --> Local
+    # myapp.com/post/2/comment/ --> online
+    path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
 ]
