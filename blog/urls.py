@@ -35,4 +35,8 @@ urlpatterns = [
     # 127.0.0.8000/comment/remove --> Local
     # myapp.com/comment/remove --> online
     path('comment/<int:pk>/remove/>', views.comment_remove, name='comment_remove'),
+
+    # 127.0.0.8000/comment/2/approve --> Local
+    # myapp.com/comment/2/approve --> online
+    path('comment/<int:pk>/approve/>', views.comment_approve, name='comment_approve')
 ]
